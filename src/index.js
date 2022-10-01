@@ -16,6 +16,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     // need to watch for the GET from movie for details page
+    yield takeEvery('FETCH_DETAILS', fetchMovieDetails);
 };
 
 function* fetchAllMovies() {
@@ -30,8 +31,9 @@ function* fetchAllMovies() {
     };
 };
 
-function getMovieDetails() {
+function* fetchMovieDetails() {
     // axios for getting movie and details
+    console.log('in fetch movie details')
 };
 
 // Create sagaMiddleware

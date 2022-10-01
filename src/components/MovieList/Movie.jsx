@@ -1,10 +1,14 @@
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 
 function Movie({ movie }) {
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         // dispatch to get/id
+        dispatch({ type: 'FETCH_DETAILS', payload: movie.id });
         history.push('/details');
     };
 
