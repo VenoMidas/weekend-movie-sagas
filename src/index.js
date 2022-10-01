@@ -12,22 +12,22 @@ import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator function
+// watches for dispatches
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-}
+};
 
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
-        console.log('get all:', movies.data);
+        // console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
-
-    } catch {
-        console.log('get all error');
-    }
-        
-}
+    } catch (error) {
+        console.log('Error in fetchAllMovies', error);
+        alert('Something went wrong!');
+    };
+};
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -39,8 +39,8 @@ const movies = (state = [], action) => {
             return action.payload;
         default:
             return state;
-    }
-}
+    };
+};
 
 // Used to store the movie genres
 const genres = (state = [], action) => {
@@ -49,8 +49,8 @@ const genres = (state = [], action) => {
             return action.payload;
         default:
             return state;
-    }
-}
+    };
+};
 
 // Create one store that all components can use
 const storeInstance = createStore(
@@ -68,7 +68,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
