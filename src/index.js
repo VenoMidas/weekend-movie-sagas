@@ -31,9 +31,26 @@ function* fetchAllMovies() {
     };
 };
 
-function* fetchMovieDetails() {
+// Store the movie details
+const movieDetails = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_MOVIE_DETAILS':
+            return action.payload;
+        default:
+            return state;
+    };
+};
+
+function* fetchMovieDetails(action) {
     // axios for getting movie and details
-    console.log('in fetch movie details')
+    try {
+        const movieDetails = yield axios.get(`/api/movie/${action.payload}`);
+        yield put({ type: 'SET_MOVIE_DETAILS', payload: movieDetails.data });
+    } catch (error) {
+        console.log('Error in fetchMovieDetails', error);
+        alert('Something went wrong.');
+    };
+    // console.log('in fetch movie details')
 };
 
 // Create sagaMiddleware
@@ -64,6 +81,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        movieDetails,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
