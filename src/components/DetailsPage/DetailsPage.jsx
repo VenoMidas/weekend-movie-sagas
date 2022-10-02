@@ -1,6 +1,7 @@
-import './DetailsPage.css';
-import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import './DetailsPage.css'; // imports css file
+import { useHistory } from 'react-router-dom'; // import for router
+import { useSelector } from 'react-redux'; // import for redux
+// MUI imports
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -9,6 +10,7 @@ import Box from '@mui/material/Box';
 function DetailsPage() {
     const history = useHistory();
 
+    // get movie details from redux
     const detailsArray = useSelector(store => store.movieDetails);
 
     return (
@@ -44,4 +46,3 @@ function DetailsPage() {
 };
 
 export default DetailsPage;
-

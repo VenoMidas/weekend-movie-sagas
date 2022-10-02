@@ -1,16 +1,18 @@
-import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import Grid from '@mui/material/Grid'; // import Grid element from MUI
-import Card from '@mui/material/Card'; // import Card element from MUI
-import CardMedia from '@mui/material/CardMedia'; // import CardMedia element from MUI
+import { useHistory } from 'react-router-dom'; // import for routing
+import { useDispatch } from 'react-redux'; // import for redux
+// MUI imports
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 
 function Movie({ movie }) {
     const history = useHistory();
     const dispatch = useDispatch();
 
     const handleClick = () => {
-        // dispatch to get/id
+        // dispatch to GET /api/movie/:id
         dispatch({ type: 'FETCH_DETAILS', payload: movie.id });
+        // navigate to dispatch page (should this be moved to after the SET_DETAILS in index.js)
         history.push('/details');
     };
 

@@ -1,4 +1,5 @@
-import './Header.css'
+import './Header.css' // css file import
+// MUI imports
 import Typography from '@mui/material/Typography';
 
 function Header() {
