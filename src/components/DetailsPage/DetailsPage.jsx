@@ -2,9 +2,8 @@ import './DetailsPage.css';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 function DetailsPage() {
     const history = useHistory();
@@ -14,6 +13,8 @@ function DetailsPage() {
     return (
         <>
             <Typography variant="h3" gutterBottom>Movie Details</Typography>
+            <br />
+            <br />
             {
                 detailsArray.map(movie => {
                     return (
@@ -32,7 +33,9 @@ function DetailsPage() {
                     )
                 })
             }
-            <button onClick={() => history.push('/')} >Back to list</button>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => history.push('/')} >Back to list</Button>
         </>
     );
 };
