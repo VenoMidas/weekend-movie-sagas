@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import Movie from './Movie';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 function MovieList() {
     const dispatch = useDispatch();
@@ -14,8 +15,8 @@ function MovieList() {
 
     return (
         <div>
-            <h1>MovieList</h1>
-            <Grid container spacing={2}>
+            <Typography variant="h3" gutterBottom>Movie List</Typography>
+            <Grid container spacing={2} >
                 {movies.map(movie => {
                     return (
                         <Movie key={movie.id} movie={movie} />
