@@ -2,11 +2,15 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
 import DetailsPage from '../DetailsPage/DetailsPage';
+import Header from './Header/Header';
+import Container from '@mui/material/Container';
 
 function App() {
   return (
-    <div className="App">
-      <h1>The Movies Saga!</h1>
+    <Container>
+
+      <Header />
+
       <Router>
 
         <Route path="/" exact>
@@ -21,7 +25,8 @@ function App() {
         {/* Add Movie page */}
 
       </Router>
-    </div>
+
+    </Container>
   );
 };
 
