@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function DetailsPage() {
     const history = useHistory();
@@ -12,7 +13,7 @@ function DetailsPage() {
 
     return (
         <>
-            <Typography variant="h3" gutterBottom>Movie Details</Typography>
+            <Typography className='center' variant="h3" gutterBottom>Movie Details</Typography>
             <br />
             <br />
             {
@@ -35,7 +36,9 @@ function DetailsPage() {
             }
             <br />
             <br />
-            <Button variant="outlined" onClick={() => history.push('/')} >Back to list</Button>
+            <Box className='center'>
+                <Button variant="outlined" onClick={() => history.push('/')} >Back to list</Button>
+            </Box>
         </>
     );
 };

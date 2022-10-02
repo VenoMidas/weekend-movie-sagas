@@ -15,7 +15,7 @@ function MovieList() {
 
     return (
         <div>
-            <Typography variant="h3" gutterBottom>Movie List</Typography>
+            <Typography className='center' variant="h3" gutterBottom>Movie List</Typography>
             <Grid container spacing={2} >
                 {movies.map(movie => {
                     return (
