@@ -12,7 +12,8 @@ function Movie({ movie }) {
     const handleClick = () => {
         // dispatch to GET /api/movie/:id
         dispatch({ type: 'FETCH_DETAILS', payload: movie.id });
-        // navigate to dispatch page (should this be moved to after the SET_DETAILS in index.js)
+        // navigate to details page (should this be moved to after the SET_DETAILS in index.js?)
+        // will this component reload on change from the store?
         history.push('/details');
     };
 
