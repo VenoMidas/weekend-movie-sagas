@@ -2,10 +2,11 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList'
 import DetailsPage from '../DetailsPage/DetailsPage';
+import Container from '@mui/material/Container';
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
       <h1>The Movies Saga!</h1>
       <Router>
 
@@ -21,7 +22,7 @@ function App() {
         {/* Add Movie page */}
 
       </Router>
-    </div>
+    </Container>
   );
 };
 
