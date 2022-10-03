@@ -8,7 +8,8 @@ A list of available movies with the ability to view details of the selected movi
 
 ## Screenshot
 
-![Screenshot](public/images/screenshot.png)
+![Screenshot](public/images/screenShotOne.png)
+![Screenshot](public/images/screenShotTwo.png)
 
 ### Prerequisites
 
