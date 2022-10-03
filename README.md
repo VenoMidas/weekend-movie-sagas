@@ -30,6 +30,12 @@ A list of available movies with the ability to view details of the selected movi
 2. As a user I want to be able to view each movies details
 3. As a user I want to be able to navigate back to the home page
 
+## Roadmap
+
+1. Form to add movie to the list
+2. Utilize react router url params to maintain data on refresh
+3. Abilty to edit movie details
+
 ## Built With
 
 1. ![image](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
